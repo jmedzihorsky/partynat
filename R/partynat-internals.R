@@ -498,6 +498,67 @@ roseurwin1975cri <-
 	}
 
 
+#	---------------------------
+#		Dissimilarity Index 
+#	---------------------------
+
+dissimilarity2015 <-
+	function(x, weight_choice=TRUE, weight_territory=TRUE)
+	{
+		if (!ok.tcm(x)) { stop('mat does not look like a territory-by-choice matrix.') }
+		if (!weight_choice) { stop('The index is choice-weighted.') }
+		if (!weight_territory) { stop('The index is territory-weighted.') }
+		x <- as.matrix(x)
+		rr <- list()
+		nc <- ncol(x)
+		ll <- loglin(x, list(1, 2), fit=TRUE, print=FALSE)
+		fd <-
+			function(o=x, m=ll$fit, k=1:nc)
+			{
+				sum(abs(o[,k]-m[,k]))/(2*sum(o[,k]))
+			}
+		rr$total <- fd(o=x, m=ll$fit, k=1:nc)
+		rr$choices <- sapply(1:nc, fd, o=x, m=ll$fit)
+		rr$choices[colSums(x)==0] <- 0
+		class(rr) <- c('partynat_internal')
+		return(rr)
+	}
+
+
+#   --------------------------
+#       Mutual Information
+#   --------------------------
+
+mutualinfo <-
+	function(x, weight_choice=TRUE, weight_territory=TRUE)
+	{
+		if (!ok.tcm(x)) { stop('mat does not look like a territory-by-choice matrix.') }
+		if (!weight_choice) { stop('The index is choice-weighted.') }
+		if (!weight_territory) { stop('The index is territory-weighted.') }
+        hf <- function(pp) -sum(pp[pp>0]*log2(pp[pp>0]))
+		x <- as.matrix(x)
+        nc <- ncol(x)
+        p <- x/sum(x)
+        getmi <-
+            function(p) 
+            {
+                p_row <- rowSums(p)
+                p_col <- colSums(p)
+                h_row <- hf(p_row)
+                h_col <- hf(p_col)
+                h_cross <- hf(p)
+                mi <- h_row + h_col - h_cross
+                return(mi)
+            }
+        h_row <- hf(rowSums(p))
+		rr <- list()
+		rr$total <- getmi(p)
+		rr$choices <- sapply(1:nc, function(j) h_row - hf(p[,j]/sum(p[,j])))
+		class(rr) <- c('partynat_internal')
+		return(rr)
+	}
+
+
 #	=========================================================
 #		Indices defined only for systems (inflation/ENPP)
 #	=========================================================

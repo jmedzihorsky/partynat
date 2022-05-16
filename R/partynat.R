@@ -85,6 +85,12 @@ partynat <-
 			} else if (stat=='ii') {
 				auxfun <- moeniuskasuya2004ii
 				out$name <- 'Inflation Index (Moenius and Kasuya 2004)'
+			} else if (stat=='delta') {
+				auxfun <- dissimilarity2015
+				out$name <- 'Dissimilarity Index'
+			} else if (stat=='mi') {
+				auxfun <- mutualinfo
+				out$name <- 'Mutual Information (bits)'
 			} else {
 				stop('Unsupported statistic requested.')
 			}

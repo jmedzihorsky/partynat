@@ -7,6 +7,9 @@ via nonparametric bootstrap, subsampling and jackknife
 with optional bias correction.
 
 
+It's a companion package to
+[Medzihorsky, Juraj. (2022). Unifying the Measurement of Variation in Electoral Support]()
+
 ## Installation
 
 You can install it using `devtools`
@@ -109,4 +112,5 @@ The S3 class `"partynat"` further has a `summary()` and a `plot()` method attach
 |Cumulative Regional Inequality|Rose and Urwin (1975)|`"CRI"`|
 |Mean Standard Deviation of row shares| |`"MSD"`|
 |Variance of row shares| |`"Var"`|
-
+|Mutual Information|Frankel and Volij (2011)|`"MI"`|
+|Dissimilarity index for choice-group independence|Medzihorsky (2022)|`"Delta"`|
