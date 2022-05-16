@@ -1,6 +1,6 @@
 #	partynat function for partynat
 #	Juraj Medzihorsky
-#	2014-12-20
+#	2022-05-16
 
 
 partynat <-
@@ -246,7 +246,8 @@ partynat <-
 			out$choices$upp <- out$choices$est + qnorm(pp)*out$choices$se
 
 		}
-		
+	    out$confidence_level <- confidence_level    
+
 		class(out) <- 'partynat'
 		return(out)
 	}

@@ -1,10 +1,12 @@
 #	plot() for `partynat'
 #	Juraj Medzihorsky
-#	2014-12-10
+#	2022-05-16
 
-plot.partynat <-
-	function(x, ...)
+setMethod('plot',
+          'partynat',
+	function(x, xlab=NULL, main='', ...)
 	{
+        dots <- list(...)
 		v <- rbind(x$total, x$choices)
 		v$col <- c('red', rep('blue', nrow(x$choices))) 
 		v$pch <- c(18, rep(20, nrow(x$choices)))
@@ -19,8 +21,14 @@ plot.partynat <-
 		} else {
 			xl <- range(v[,1])
 		}
-		plot(0, 0, type='n', xlim=xl, ylim=range(v$ycoord), xlab='', yaxt='n', ylab='', ...)
-		axis(2, at=1:nrow(v), v$lab, las=1)
+        if (is.null(xlab)) {
+            xlab <- x$name
+        } 
+		plot(0, 0, type='n', xlim=xl, ylim=range(v$ycoord),
+             xlab=xlab, ylab='', xaxt='n', yaxt='n', main=main,
+             ...)
+        axis(1, lwd=0, lwd.ticks=1)
+		axis(2, at=1:nrow(v), v$lab, las=1, lwd=0, lwd.ticks=1)
 		for (i in 1:nrow(v)) {
 		  	lines(xl, rep(i, 2), col='grey', lty=3) 
 			points(v[i,1], i, pch=v$pch[i], col=v$col[i])
@@ -29,5 +37,6 @@ plot.partynat <-
 			}
 	   	}
 	}
+)
 
 #	END
