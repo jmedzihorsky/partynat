@@ -1,0 +1,9 @@
+Package: partynat
+Type: Package
+Title: A package for party nationalization indices
+Version: 0.1
+Date: 2014-12-20
+Author: Juraj Medzihorsky
+Maintainer: Juraj Medzihorsky <juraj.medzihorsky@gmail.com>
+Description: `partynat' is an R package for indices of party nationalization and related quantities.
+License: GPL >= 2.0
