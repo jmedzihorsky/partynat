@@ -83,6 +83,7 @@ The function outputs an object of S3 class `"partynat"`, a list composed of
 - `choices` The values of the index for each choice.
     Equals to `NA` for indices that are not defined on the choice level.
     If resampling is applied, includes standard errors and confidence intervals.
+- `confidence_level` The requested confidence levels.    
 
 The S3 class `"partynat"` further has a `summary()` and a `plot()` method attached.
 
