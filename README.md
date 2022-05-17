@@ -119,7 +119,7 @@ The S3 class `"partynat"` further has a `summary()` and a `plot()` method attach
 
 ##  Usage
 
-The starting point is a matrix with a cross-tabulation of the vote counts by
+The required data format is a matrix with a cross-tabulation of the vote counts by
 territory (rows) and party (columns). 
 The counts can be either the official election results, or estimates from a survey.
 The `partynat()` function requires integer counts,
@@ -174,7 +174,8 @@ just like
 
 The dissimilarity index also has a long track record in the study of segregation
 (see [Duncan and Duncan (1955)](https://doi.org/10.2307/2088328)).
-From this perspective, we can look on party _de_-nationalization as voter segregation.
+From this perspective, we can look on party _de_-nationalization as a case of voter segregation
+that can also happen along gender, ethnic, occupational etc. lines.
 Another successful index of segregation is _mutual information_.
 [Frankel and Volij (2011)](https://doi.org/10.1016/j.jet.2010.10.008) and
 [Mora and Ruiz-Castillo (2011)](https://journals.sagepub.com/doi/abs/10.1111/j.1467-9531.2011.01237.x)
