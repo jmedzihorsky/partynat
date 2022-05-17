@@ -182,4 +182,4 @@ show that it has a host of appealing properties, including strong decomposabilit
 However, its substantive interpretation is a bit less direct than that of the dissimilarity index.
 
 The working paper also discusses the measurement of _dynamic nationalization_, and _electoral continuity_ 
-with the dissimilarity index, but these are not currently implemented in `partynat`.
+with the dissimilarity index and log-linear models, but these are not currently implemented in `partynat`.
