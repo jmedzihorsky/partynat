@@ -51,6 +51,7 @@ partynat(mat, statistic = "PNS", weight_choice = TRUE, weight_territory = TRUE, 
 }
 }
 \details{
+    \itemize{
     \item{"IPA2"}   
         {Index of Party Aggregation (Allik 2006)}
     \item{"PNSW"}   
@@ -97,6 +98,7 @@ partynat(mat, statistic = "PNS", weight_choice = TRUE, weight_territory = TRUE, 
         {Mutual Information (Frankel and Volij 2011)}
     \item{"Delta"}
         {Dissimilarity index for choice-group independence (Medzihorsky 2022)}
+    }
 }
 \value{
 	An object of S3 class \code{'partynat'}, a list composed of
