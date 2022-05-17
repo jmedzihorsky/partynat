@@ -51,7 +51,52 @@ partynat(mat, statistic = "PNS", weight_choice = TRUE, weight_territory = TRUE, 
 }
 }
 \details{
-%%  ~~ If necessary, more details than the description above ~~
+    \item{"IPA2"}   
+        {Index of Party Aggregation (Allik 2006)}
+    \item{"PNSW"}   
+        {Weighted Party (System) Nationalization Score (Bochsler 2010) }
+    \item{"PNS10"}  
+        {Standardized Party (System) Nationalization Score (Bochsler 2010) }
+    \item{"TCI"}    
+        {Territorial Coverage Index (Caramani 2004)}
+    \item{"IPR2"}
+        {Index adjusted for Party size and number of Regions (Caramani 2004)}
+    \item{"IPA1"}
+        {Indicator of Party Aggregation (Chhibber and Kollman 1998)}
+    \item{"IS"}
+        {Inflation Score (Cox 1999)}
+    \item{"VC"}
+        {Variability Coefficient (Ersson, Janda, and Lane 1985)}
+    \item{"SWVC"}
+        {Standardized and Weighted Variability Coefficient (Ersson, Janda, and Lane 1985)}
+    \item{"CPR"}
+        {Coefficient of Party Regionalization (Golosov 2016)}
+    \item{"IPN"}
+        {Index of Party (System) Nationalization (Golosov 2016)}
+    \item{"NPNS"}
+        {Normalized Party (System) Nationalization Score (Golosov 2016)}
+    \item{"NVC"}
+        {Normalized Coefficient of Variation (Golosov 2016)}
+    \item{"IPR1"}
+        {Index of Party Regionalization (Golosov and Ponarin 1999)}
+    \item{"PNS"}
+        {Party Nationalization Score (Jones and Mainwaring 2003)}
+    \item{"Lee"}
+        {Lee index (Lee 1988)}
+    \item{"II"}
+        {Inflation Index (Moenius and Kasuya 2004)}
+    \item{"MAD"}
+        {Index of variation/Mean Absolute Deviation (Rose and Urwin 1975)}
+    \item{"CRI"}
+        {Cumulative Regional Inequality (Rose and Urwin 1975)}
+    \item{"MSD"}
+        {Mean Standard Deviation of row shares}
+    \item{"Var"}
+        {Variance of row shares}
+    \item{"MI"}
+        {Mutual Information (Frankel and Volij 2011)}
+    \item{"Delta"}
+        {Dissimilarity index for choice-group independence (Medzihorsky 2022)}
 }
 \value{
 	An object of S3 class \code{'partynat'}, a list composed of
@@ -63,6 +108,8 @@ partynat(mat, statistic = "PNS", weight_choice = TRUE, weight_territory = TRUE, 
 	\item{choices}{Values of the index for each choice. NA if not defined under
 	   	the selected index. If resampling is 
 		applied, includes standard errors and confidence intervals.}
+    \item{confidence_level}{ The requested confidence level in case bootstrap, 
+        jackknife, or subsampling were performed. }
 }
 \references{
 %% ~put references to the literature/web site here ~
@@ -81,9 +128,14 @@ partynat(mat, statistic = "PNS", weight_choice = TRUE, weight_territory = TRUE, 
 	\code{\link[partynat::summary.partynat]{summary.partynat}}
 }
 \examples{
-##---- Should be DIRECTLY executable !! ----
-##-- ==>  Define data, use random,
-##--	or do  help(data=index)  for the standard data sets.
+    set.seed(1234)
+    tab_1 <- matrix(round(rpois(40, 100)*rbeta(40, 1, 1)),
+                    nrow=10, ncol=4)
+    rownames(tab_1) <- paste0(1:nrow(tab_1))
+    colnames(tab_1) <- LETTERS[1:4]
+    head(tab)
+    d_1 <- partynat(tab_1, boot=TRUE, n_rep=1e2)
+    summary(d_1)
 }
 \keyword{ partynat }
 \keyword{ nationalization }

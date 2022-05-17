@@ -1,6 +1,6 @@
 #	partynat function for partynat
 #	Juraj Medzihorsky
-#	2022-05-16
+#	2022-05-17
 
 
 partynat <-
@@ -17,8 +17,15 @@ partynat <-
 			 confidence_level=0.95)
 	{
 		out <- list()
-		out$call <- match.call()
+		out$call <- match_call_defaults()
 		out$stat <- statistic 
+
+        if (!is.logical(weight_choice)) { stop('argument weight_choice must be TRUE/FALSE\n') }
+        if (!is.logical(weight_territory)) { stop('argument weight_territory must be TRUE/FALSE\n') }
+        if (!is.logical(boot)) { stop('argument boot must be TRUE/FALSE\n') }
+        if (!is.logical(jack)) { stop('argument jack must be TRUE/FALSE\n') }
+        if (!is.logical(subsample)) { stop('argument subsample must be TRUE/FALSE\n') }
+        if (!is.logical(bias)) { stop('argument bias must be TRUE/FALSE\n') }
 
 		if (is.character(statistic)) {
 			stat <- tolower(statistic)[1]
@@ -252,8 +259,11 @@ partynat <-
 			out$choices$upp <- out$choices$est + qnorm(pp)*out$choices$se
 
 		}
-	    out$confidence_level <- confidence_level    
-
+        if (boot|jack|subsample) {
+	        out$confidence_level <- confidence_level    
+        } else {
+            out$confidence_level <- NA
+        }
 		class(out) <- 'partynat'
 		return(out)
 	}

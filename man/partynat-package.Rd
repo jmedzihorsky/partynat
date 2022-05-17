@@ -12,8 +12,8 @@
 \tabular{ll}{
 Package: \tab partynat\cr
 Type: \tab Package\cr
-Version: \tab 0.1\cr
-Date: \tab 2014-12-20\cr
+Version: \tab 0.2\cr
+Date: \tab 2022-05-17\cr
 License: \tab GPL >= 2\cr
 }
 }
@@ -21,7 +21,7 @@ License: \tab GPL >= 2\cr
 Juraj Medzihorsky <juraj.medzihorsky@gmail.com>
 }
 \references{
-	Not yet.
+	Medzihorsky, Juraj. 2022. Unifying the measurement of variation in electoral support.
 }
 \keyword{ package }
 \keyword{ nationalization }

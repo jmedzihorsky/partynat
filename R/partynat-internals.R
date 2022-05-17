@@ -799,4 +799,30 @@ pool.jack <-
 	return(out)
 }
 
+
+#	--------------------------------
+#		Match Call with defaults
+#	--------------------------------
+#	from https://github.com/nfultz/stackoverflow
+#   renamed for safety
+
+match_call_defaults <-
+    function(definition = sys.function(sys.parent()),
+             call_ = sys.call(sys.parent()),
+             expand_dots = TRUE,
+             envir = parent.frame(2L)) 
+    {
+    call_ <- match.call(definition, call_, expand_dots, envir)
+    formals_ <- formals(definition)
+  
+    if(expand_dots && '...' %in% names(formals_))
+        formals[['...']] <- NULL
+  
+    for(i in setdiff(names(formals_), names(call_)))
+        call_[i] <- list( formals_[[i]] )
+  
+    match.call(definition, call_, TRUE, envir)
+}
+
+
 #	END

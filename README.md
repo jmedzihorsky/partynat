@@ -1,7 +1,7 @@
 # partynat
 
 `partynat` is an `R` package for computing indices used in the context of party nationalization research.
-It provides more than a dozen different indices,
+It provides more than a dozen different indices of static party nationalization,
 including standard errors and confidence intervals 
 via nonparametric bootstrap, subsampling and jackknife
 with optional bias correction.
@@ -76,7 +76,7 @@ The main function is
 The function outputs an object of S3 class `"partynat"`, a list composed of
 
 - `call` The matched call.
-- `stat` The `statistics` argument in the call.
+- `stat` The `statistics` argument in the call. See **Indices** below.
 - `name` The name of the index.
 - `total` The value of the index for the whole table.
     If resampling is applied, includes standard errors and confidence intervals.
@@ -115,3 +115,68 @@ The S3 class `"partynat"` further has a `summary()` and a `plot()` method attach
 |Variance of row shares| |`"Var"`|
 |Mutual Information|Frankel and Volij (2011)|`"MI"`|
 |Dissimilarity index for choice-group independence|Medzihorsky (2022)|`"Delta"`|
+
+
+##  Usage
+
+The starting point is a matrix with a cross-tabulation of the vote counts by
+territory (rows) and party (columns). 
+The counts can be either the official election results, or estimates from a survey.
+The `partynat()` function requires integer counts,
+and implements resampling procedures for survey data.
+If for some reason you do not have the counts and have instead the constituency percentages,
+you can simply multiply those by the constituency sizes and round them. 
+Alternatively, you can apportion the votes with
+`giveseats()` in [`seatdist`](https://github.com/jmedzihorsky/seatdist),
+to make sure the counts add up to the desired margins.
+
+
+##  Background
+
+What political scientists mean under _party nationalization_ is that a political party's
+presence is the same in all territories (such as constituencies or federal states)
+that comprise a nation. By presence they usually mean electoral support,
+and by it being the same everywhere they mean at least three different things 
+(see [Caramani (1996)](https://doi.org/10.1080/01402389608425131)):
+1. That the party receives the same vote share everywhere. This is called _static nationalization_.
+2. That the party's electoral support changes the same way everywhere. This known as _dynamic nationalization_.
+3. That the effect of something, say a campaign, on the party's support is the same everywhere.
+<!--This package deals with the first.-->
+<!--The starting point is a cross-tab that tabulates the votes by party (columns) and territory (rows).-->
+
+While party scholars agree on what a perfectly nationalized party system should look 
+like --- within-territory party shares are identical to their national shares ---
+they don't agree on how to measure deviations from this state.
+This shouldn't come as a surprise if we rethink the problem as one of association.
+From that perspective, static nationalization is party-territory independence.
+And there is an infinite number of measures of association for categorical variables.
+
+Party scholars have invested considerable effort in developing indices of static nationalization
+that have the propeties they desire of such indices.
+Perhaps the most sophisticated effort to date is an index based on the Gini coefficient of inequality,
+proposed by [Bochsler (2010)](https://doi.org/10.1016/j.electstud.2009.06.003).
+This index, called `"PNSW"` here, has a host of appealing formal properties.
+However, it's numeric values lack clear substantive interpretation.
+
+As an alternative that has an easy substantive interpretation, 
+my [working paper]() proposes an index
+that gives the smallest fraction of the votes that would need to change
+for static nationalization to happen.
+The cost of this easy substantive interpretation is that unlike
+the PNSW, the Delta index is only sensitive to transfers under the weak version of Dalton's principle.
+While this rids it of some formal elegance, 
+the working paper shows that it nevertheless still correlates 0.99 with the PNSW in large set of elections 
+from over two centuries.
+This index, called `"Delta"` here,
+is a special cases of Gini's dissimilarity index,
+just like 
+[Pedersen's (1979) electoral volatility index](https://doi.org/10.1111/j.1475-6765.1979.tb01267.x).
+
+The dissimilarity index also has a long track record in the study of segregation
+(see [Duncan and Duncan (1955)](https://doi.org/10.2307/2088328)).
+From this perspective, we can look on party _de_-nationalization as voter segregation.
+Another successful index of segregation is _mutual information_.
+[Frankel and Volij (2011)](https://doi.org/10.1016/j.jet.2010.10.008) and
+[Mora and Ruiz-Castillo (2011)](https://journals.sagepub.com/doi/abs/10.1111/j.1467-9531.2011.01237.x)
+show that it has a host of appealing properties, including strong decomposability.
+
