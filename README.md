@@ -8,7 +8,9 @@ with optional bias correction.
 
 
 It's a companion package to
-[Medzihorsky, Juraj. (2022). Unifying the Measurement of Variation in Electoral Support](https://github.com/jmedzihorsky/partynat/blob/master/PartyNat.pdf)
+[Medzihorsky, Juraj. (2022). Unifying the Measurement of Variation in Electoral Support](https://github.com/jmedzihorsky/partynat/blob/master/PartyNat-WP.pdf)
+
+The manual is [here](https://github.com/jmedzihorsky/partynat/blob/master/partynat-manual.pdf).
 
 ## Installation
 
@@ -159,7 +161,7 @@ This index, called `"PNSW"` here, has a host of appealing formal properties.
 However, it's numeric values lack clear substantive interpretation.
 
 As an alternative that has an easy substantive interpretation, 
-my [working paper](https://github.com/jmedzihorsky/partynat/blob/master/PartyNat.pdf) proposes an index
+my [working paper](https://github.com/jmedzihorsky/partynat/blob/master/PartyNat-WP.pdf) proposes an index
 that gives the smallest fraction of the votes that would need to change
 for static nationalization to happen.
 The cost of this easy substantive interpretation is that unlike
