@@ -95,28 +95,28 @@ The S3 class `"partynat"` further has a `summary()` and a `plot()` method attach
 |Index|Source|`partynat` call|
 |-----|------|---------------|
 |Index of Party Aggregation|Allik (2006)|`"IPA2"`|
-|Weighted Party (System) Nationalization Score|Bochsler (2010)|`"PNSW"`|
-|Standardized Party (System) Nationalization Score|Bochsler (2010)|`"PNS10"`|
-|Territorial Coverage Index|Caramani (2004)|`"TCI"`|
-|Index adjusted for Party size and number of Regions|Caramani (2004)|`"IPR2"`|
-|Indicator of Party Aggregation|Chhibber and Kollman (1998)|`"IPA1"`|
-|Inflation Score|Cox (1999)|`"IS"`|
-|Variability Coefficient|Ersson, Janda, and Lane (1985)|`"VC"`|
-|Standardized and Weighted Variability Coefficient|Ersson, Janda, and Lane (1985)|`"SWVC"`|
-|Coefficient of Party Regionalization|Golosov (2016)|`"CPR"`|
-|Index of Party (System) Nationalization|Golosov (2016)|`"IPN"`|
-|Normalized Party (System) Nationalization Score|Golosov (2016)|`"NPNS"`|
-|Normalized Coefficient of Variation|Golosov (2016)|`"NVC"`|
-|Index of Party Regionalization|Golosov and Ponarin (1999)|`"IPR1"`|
-|Party Nationalization Score|Jones and Mainwaring (2003)|`"PNS"`|
+|Weighted Party (System) Nationalization Score|[Bochsler (2010)](https://doi.org/10.1016/j.electstud.2009.06.003)|`"PNSW"`|
+|Standardized Party (System) Nationalization Score|[Bochsler (2010)](https://doi.org/10.1016/j.electstud.2009.06.003)|`"PNS10"`|
+|Territorial Coverage Index|[Caramani (2004)](http://hdl.handle.net/1814/22507)|`"TCI"`|
+|Index adjusted for Party size and number of Regions|[Caramani (2004)](http://hdl.handle.net/1814/22507)|`"IPR2"`|
+|Indicator of Party Aggregation|[Chhibber and Kollman (1998)](https://doi.org/10.2307/2585667)|`"IPA1"`|
+|Inflation Score|[Cox (1999)](https://doi.org/10.1146/annurev.polisci.2.1.145)|`"IS"`|
+|Variability Coefficient|[Ersson, Janda, and Lane (1985)](https://doi.org/10.1177%2F0010414085018002002)|`"VC"`|
+|Standardized and Weighted Variability Coefficient|[Ersson, Janda, and Lane (1985)](https://doi.org/10.1177%2F0010414085018002002)|`"SWVC"`|
+|Coefficient of Party Regionalization|[Golosov (2016)](https://doi.org/10.1177%2F1354068814549342)|`"CPR"`|
+|Index of Party (System) Nationalization|[Golosov (2016)](https://doi.org/10.1177%2F1354068814549342)|`"IPN"`|
+|Normalized Party (System) Nationalization Score|[Golosov (2016)](https://doi.org/10.1177%2F1354068814549342)|`"NPNS"`|
+|Normalized Coefficient of Variation|[Golosov (2016)](https://doi.org/10.1177%2F1354068814549342)|`"NVC"`|
+|Index of Party Regionalization|[Golosov and Ponarin (1999)](https://cadmus.eui.eu/bitstream/handle/1814/1630/1999_EUI%20WP_RSCAS_025.pdf?sequence=1)|`"IPR1"`|
+|Party Nationalization Score|[Jones and Mainwaring (2003)](https://doi.org/10.1177%2F13540688030092002)|`"PNS"`|
 |Lee index|Lee (1988)|`"Lee"`|
-|Inflation Index|Moenius and Kasuya (2004)|`"II"`|
+|Inflation Index|[Moenius and Kasuya (2004)](https://doi.org/10.1177%2F1354068804045387)|`"II"`|
 |Index of variation/Mean Absolute Deviation|Rose and Urwin (1975)|`"MAD"`|
 |Cumulative Regional Inequality|Rose and Urwin (1975)|`"CRI"`|
 |Mean Standard Deviation of row shares| |`"MSD"`|
 |Variance of row shares| |`"Var"`|
-|Mutual Information|Frankel and Volij (2011)|`"MI"`|
-|Dissimilarity index for choice-group independence|Medzihorsky (2022)|`"Delta"`|
+|Mutual Information|[Frankel and Volij (2011)](https://doi.org/10.1016/j.jet.2010.10.008)|`"MI"`|
+|Dissimilarity index for choice-group independence|[Medzihorsky (2022)](https://github.com/jmedzihorsky/partynat/blob/master/PartyNat-WP.pdf)|`"Delta"`|
 
 
 ##  Usage
