@@ -2,7 +2,7 @@ Package: partynat
 Type: Package
 Title: A package for party nationalization indices
 Version: 0.2
-Date: 2022-05-16
+Date: 2022-05-17
 Author: Juraj Medzihorsky
 Maintainer: Juraj Medzihorsky <juraj.medzihorsky@gmail.com>
 Description: `partynat' is an R package for indices of party nationalization and related quantities.

@@ -114,7 +114,35 @@ partynat(mat, statistic = "PNS", weight_choice = TRUE, weight_territory = TRUE, 
         jackknife, or subsampling were performed. }
 }
 \references{
-%% ~put references to the literature/web site here ~
+	Allik, M., 2006. Parteisüsteemid föderaalriikides. Master’s thesis. University of Tartu.
+	
+	Bochsler, D., 2010. Measuring party nationalisation: a new Gini-based indicator that corrects for the number of units. Electoral Studies, 29(1), pp.155–168.
+	
+	Caramani, D., 2004. The nationalization of politics: the formation of national electorates and party systems in Western Europe. Cambridge University Press.
+	
+	Chhibber, P. and Kollman, K., 1998. Party aggregation and the number of parties in India and the United States. American Political Science Review, 92(2), pp.329–342.
+	
+	Cox, G., 1999. Electoral rules and electoral coordination. Annual Review of Political Science, 2, pp.145–161.
+	
+	Ersson, S., Janda, K., and Lane, J.-E., 1985. Ecology of party strength in Western Europe a regional analysis. Comparative Political Studies, 18(2), pp.170–205.
+	
+	Frankel, D.M. and Volij, O., 2011. Measuring school segregation. Journal of Economic Theory, 146(1), pp.1-38.
+	
+	Golosov, G.V., 2016. Party system nationalization: the problems of measurement with an application to federal states. Party Politics, 22(3), pp.278–288.
+	
+	Golosov, G.V. and Ponarin, E., 1999. Regional bases of party politics: a measure and its implications for the study of party system consolidation in new democracies.
+
+	Jones, M.P. and Mainwaring, S., 2003. The nationalization of parties and party systems: an empirical measure and an application to the Americas. Party Politics, 9(2), pp.139–166.
+	
+	Lago, I. and Montero, J.R., 2014. Defining and measuring party system nationalization. European Political Science Review, 6(2), pp.191–211.
+
+	Lee, A., 1988. The persistence of difference: electoral change in Cornwall. Political studies association conference, Plymouth.
+	
+	Medzihorsky, J. 2022. Unifying the measurement of variation in electoral support.
+	
+	Moenius, J. and Kasuya, Y., 2004. Measuring party linkage across districts: some party system inflation indices and their properties. Party Politics, 10(5), pp.543–564.
+
+	Rose, R. and Urwin, D.W., 1975. Regional differentiation and political unity in Western nations. Sage.
 }
 \author{
 	Juraj Medzihorsky
